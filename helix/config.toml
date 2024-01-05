@@ -1,0 +1,64 @@
+theme = "tokyonight"
+
+# theme = "catppuccin_macchiato"
+
+[editor]
+mouse = true
+ auto-format = true
+ auto-save = true
+line-number = "absolute"
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+lsp.display-inlay-hints = true
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+
+esc = ["collapse_selection", "keep_primary_selection"]
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+a = "move_char_left" # Maps the 'a' key to move char left command
+d ="move_char_right" # Maps the 'd' key to move char right
+w = "move_line_up"  # Maps the 'w' key to move line up
+s = "move_line_down" # Maps the 's' key to move line down
+C-v= ["paste_after"] # Maps the 'c-v'key to copy 
+C-s = ":write"
+C-z =["undo"]
+C-x =["redo"]
+C-c=["yank"]
+C-q=":quit"
+
+
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo check"
+
+[keys.insert]
+C-s =":write"
+C-z =["undo"]
+C-x =["redo"]
+C-q=":quit"
+C-c=["yank"]
+C-v= ["paste_after"] # Maps the 'c-v'key to copy 
