@@ -2,7 +2,7 @@
 
 <p id="description">This repotory contains my configuration files that i use on a daily basis on vscode feel free to download and install them.</p>
 
-<h2>Project Screenshots:</h2>
+<h2>VSCode Screenshots:</h2>
 
 <img src="https://prnt.sc/KvQOPRBQnEPu" alt="project-screenshot" width="600" height="1000/">
 
@@ -24,4 +24,18 @@ https://www.jetbrains.com/pt-br/lp/mono/
 
 ```
 Download the "settings.json" file a paste it on your vscode config folder
+```
+<p>4. Extensions</p>
+
+```
+Apc Customize UI++
+```
+```
+Better Comments
+```
+```
+Fluent Icons
+```
+```
+Min Theme
 ```
