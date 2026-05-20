@@ -60,9 +60,13 @@ outer.bottom =     12
 outer.top =        12
 outer.right =      12
 
-# 'main' binding mode declaration
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-# 'main' binding mode must be always presented
+# Binds principais.
+# Regra mental para macOS + teclado portugues:
+# - cmd fica livre para atalhos nativos das apps e do macOS
+# - alt sozinho fica livre para caracteres do teclado portugues
+# - ctrl-cmd: focar, trocar workspace, layout e acoes diretas
+# - left-option-shift via Karabiner: mover a janela atual
+# - ctrl-cmd-r / ctrl-cmd-s: modos temporarios para acoes menos frequentes
 [mode.main.binding]
 
 # All possible keys:
@@ -78,113 +82,263 @@ outer.right =      12
 
 # All possible modifiers: cmd, alt, ctrl, shift
 
-# All possible commands: https://nikitabobko.github.io/AeroSpace/commands
+# Comandos disponiveis: https://nikitabobko.github.io/AeroSpace/commands
 
-# You can uncomment this line to open up terminal with alt + enter shortcut
-# See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
+# Abrir terminal.
+ctrl-cmd-enter = 'exec-and-forget open -n -a Ghostty'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+# Layout da workspace atual.
+ctrl-cmd-y = 'layout tiles horizontal vertical'
+ctrl-cmd-a = 'layout accordion horizontal vertical'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+# Fullscreen da janela atual. Evita ctrl-cmd-f, usado por muitas apps para fullscreen nativo.
+ctrl-cmd-u = 'fullscreen'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-cmd-ctrl-alt-shift-h = 'move left'
-cmd-ctrl-alt-shift-j = 'move down'
-cmd-ctrl-alt-shift-k = 'move up'
-cmd-ctrl-alt-shift-l = 'move right'
+# Foco entre janelas: vim keys e setas.
+ctrl-cmd-h = 'focus left'
+ctrl-cmd-j = 'focus down'
+ctrl-cmd-k = 'focus up'
+ctrl-cmd-l = 'focus right'
+ctrl-cmd-left = 'focus left'
+ctrl-cmd-down = 'focus down'
+ctrl-cmd-up = 'focus up'
+ctrl-cmd-right = 'focus right'
 
+# Mover janela atual: vim keys e setas.
+ctrl-cmd-shift-h = 'move left'
+ctrl-cmd-shift-j = 'move down'
+ctrl-cmd-shift-k = 'move up'
+ctrl-cmd-shift-l = 'move right'
+ctrl-cmd-shift-left = 'move left'
+ctrl-cmd-shift-down = 'move down'
+ctrl-cmd-shift-up = 'move up'
+ctrl-cmd-shift-right = 'move right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-alt-b = 'workspace B' # browser
-alt-d = 'workspace D' # docs
-alt-e = 'workspace E' # finder
-alt-m = 'workspace M' # music
-alt-n = 'workspace N' # notes
-alt-p = 'workspace P' # photo editing
-alt-t = 'workspace T' # terminal
-alt-v = 'workspace V' # video editing
+# Workspaces numericas.
+# Evita cmd-1..9, que muitas apps usam para tabs/vistas.
+ctrl-cmd-1 = 'workspace 1'
+ctrl-cmd-2 = 'workspace 2'
+ctrl-cmd-3 = 'workspace 3'
+ctrl-cmd-4 = 'workspace 4'
+ctrl-cmd-5 = 'workspace 5'
+ctrl-cmd-6 = 'workspace 6'
+ctrl-cmd-7 = 'workspace 7'
+ctrl-cmd-8 = 'workspace 8'
+ctrl-cmd-9 = 'workspace 9'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
-cmd-ctrl-alt-shift-2 = 'move-node-to-workspace 2'
-cmd-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
-cmd-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
-cmd-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
-cmd-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
-cmd-ctrl-alt-shift-7 = 'move-node-to-workspace 7'
-cmd-ctrl-alt-shift-8 = 'move-node-to-workspace 8'
-cmd-ctrl-alt-shift-9 = 'move-node-to-workspace 9'
-cmd-ctrl-alt-shift-b = 'move-node-to-workspace B'
-cmd-ctrl-alt-shift-d = 'move-node-to-workspace D'
-cmd-ctrl-alt-shift-e = 'move-node-to-workspace E'
-cmd-ctrl-alt-shift-m = 'move-node-to-workspace M'
-cmd-ctrl-alt-shift-n = 'move-node-to-workspace N'
-cmd-ctrl-alt-shift-p = 'move-node-to-workspace P'
-cmd-ctrl-alt-shift-t = 'move-node-to-workspace T'
-cmd-ctrl-alt-shift-v = 'move-node-to-workspace V'
+ctrl-cmd-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
+ctrl-cmd-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
+ctrl-cmd-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
+ctrl-cmd-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+ctrl-cmd-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
+ctrl-cmd-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
+ctrl-cmd-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
+ctrl-cmd-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
+ctrl-cmd-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
 
-cmd-ctrl-alt-shift-f = 'fullscreen'
+# Workspaces por letra, com mnemonica.
+# B = browser, O = docs, E = explorer/files, M = music, N = notes,
+# P = photo, T = terminal, V = video.
+ctrl-cmd-b = 'workspace B'
+ctrl-cmd-o = 'workspace D'
+ctrl-cmd-e = 'workspace E'
+ctrl-cmd-m = 'workspace M'
+ctrl-cmd-n = 'workspace N'
+ctrl-cmd-p = 'workspace P'
+ctrl-cmd-t = 'workspace T'
+ctrl-cmd-v = 'workspace V'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = 'workspace-back-and-forth'
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-cmd-ctrl-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+# Mover janela para workspace por letra.
+ctrl-cmd-shift-b = 'move-node-to-workspace --focus-follows-window B'
+ctrl-cmd-shift-o = 'move-node-to-workspace --focus-follows-window D'
+ctrl-cmd-shift-e = 'move-node-to-workspace --focus-follows-window E'
+ctrl-cmd-shift-m = 'move-node-to-workspace --focus-follows-window M'
+ctrl-cmd-shift-n = 'move-node-to-workspace --focus-follows-window N'
+ctrl-cmd-shift-p = 'move-node-to-workspace --focus-follows-window P'
+ctrl-cmd-shift-t = 'move-node-to-workspace --focus-follows-window T'
+ctrl-cmd-shift-v = 'move-node-to-workspace --focus-follows-window V'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
-cmd-ctrl-alt-shift-semicolon = 'mode service'
+# Monitores.
+# Acoes por monitor ficam em letras para nao depender de simbolos do teclado PT.
+ctrl-cmd-g = 'focus-monitor --wrap-around next'
+ctrl-cmd-shift-g = 'move-node-to-monitor --wrap-around --focus-follows-window next'
+ctrl-cmd-tab = 'workspace-back-and-forth'
 
-cmd-ctrl-alt-shift-r = 'mode resize'
+# Outros atalhos uteis.
+ctrl-cmd-x = 'exec-and-forget /Users/simaocurado/.local/bin/aerospace-dev-workspace'
+
+# Modos temporarios.
+# Service: manutencao/acoes raras. Resize: redimensionar com uma tecla de cada vez.
+ctrl-cmd-s = 'mode service'
+ctrl-cmd-r = 'mode resize'
 
 [mode.resize.binding]
+# Redimensionar com vim keys e setas.
 h = 'resize width -50'
 j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
+left = 'resize width -50'
+down = 'resize height +50'
+up = 'resize height -50'
+right = 'resize width +50'
+
+# Balance all window sizes in the current workspace.
 b = 'balance-sizes'
 
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-minus = 'resize smart -50'
-equal = 'resize smart +50'
-
+# Sair do modo resize.
 enter = 'mode main'
 esc = 'mode main'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
+# Reload AeroSpace config and return to main mode.
 esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
+
+# Reset the current workspace layout tree and return to main mode.
+r = ['flatten-workspace-tree', 'mode main']
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+
+# Toggle the focused window between floating and tiling, then return to main mode.
+f = ['layout floating tiling', 'mode main']
+
+# Close all windows in the current workspace except the focused one, then return to main mode.
 backspace = ['close-all-windows-but-current', 'mode main']
-alt-enter = 'exec-and-forget open -a Calculator'
 
-cmd-ctrl-alt-shift-h = ['join-with left', 'mode main']
-cmd-ctrl-alt-shift-j = ['join-with down', 'mode main']
-cmd-ctrl-alt-shift-k = ['join-with up', 'mode main']
-cmd-ctrl-alt-shift-l = ['join-with right', 'mode main']
+# Open Calculator from service mode.
+enter = ['exec-and-forget open -a Calculator', 'mode main']
 
+# Move the focused window to a specific monitor.
+1 = ['move-node-to-monitor --focus-follows-window 1', 'mode main']
+2 = ['move-node-to-monitor --focus-follows-window 2', 'mode main']
+
+# Move the current workspace to the next monitor.
+tab = ['move-workspace-to-monitor --wrap-around next', 'mode main']
+
+# Join the focused window with the window on the left, then return to main mode.
+h = ['join-with left', 'mode main']
+
+# Join the focused window with the window below, then return to main mode.
+j = ['join-with down', 'mode main']
+
+# Join the focused window with the window above, then return to main mode.
+k = ['join-with up', 'mode main']
+
+# Join the focused window with the window on the right, then return to main mode.
+l = ['join-with right', 'mode main']
+
+# Terminal apps go to workspace T.
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = "move-node-to-workspace T"
 
+# Move Ghostty windows to the terminal workspace.
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome'
+if.app-id = 'com.mitchellh.ghostty'
+run = "move-node-to-workspace T"
+
+# Move Warp windows to the terminal workspace.
+[[on-window-detected]]
+if.app-id = 'dev.warp.Warp-Stable'
+run = "move-node-to-workspace T"
+
+# Move Apple Terminal windows to the terminal workspace.
+[[on-window-detected]]
+if.app-id = 'com.apple.Terminal'
+run = "move-node-to-workspace T"
+
+# Development apps go to workspace 2.
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.PhpStorm'
+run = "move-node-to-workspace 2"
+
+# Move Zed windows to the development workspace.
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = "move-node-to-workspace 2"
+
+# Move VS Code windows to the development workspace.
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = "move-node-to-workspace 2"
+
+# Move IntelliJ IDEA windows to the development workspace.
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+run = "move-node-to-workspace 2"
+
+# Move IntelliJ IDEA Community windows to the development workspace.
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij.ce'
+run = "move-node-to-workspace 2"
+
+# Move DBeaver windows to the development workspace.
+[[on-window-detected]]
+if.app-id = 'org.jkiss.dbeaver.core.product'
+run = "move-node-to-workspace 2"
+
+# Move Docker Desktop windows to the development workspace.
+[[on-window-detected]]
+if.app-id = 'com.docker.docker'
+run = "move-node-to-workspace 2"
+
+# Docs and productivity apps go to workspace D.
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = "move-node-to-workspace D"
+
+# Move Microsoft Word windows to the docs workspace.
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Word'
+run = "move-node-to-workspace D"
+
+# Move Microsoft Excel windows to the docs workspace.
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Excel'
+run = "move-node-to-workspace D"
+
+# Move Preview windows to the docs workspace.
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = "move-node-to-workspace D"
+
+# Media and communication apps go to workspace 3 in accordion layout.
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = ['move-node-to-workspace 3', 'layout accordion']
+
+# Move WhatsApp windows to the media workspace and keep them stacked.
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = ['move-node-to-workspace 3', 'layout accordion']
+
+# Move Discord windows to the media workspace and keep them stacked.
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['move-node-to-workspace 3', 'layout accordion']
+
+# Move TeamSpeak windows to the media workspace and keep them stacked.
+[[on-window-detected]]
+if.app-id = 'com.teamspeak.5.client'
+run = ['move-node-to-workspace 3', 'layout accordion']
+
+# Move Spotify windows to the media workspace and keep them stacked.
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['move-node-to-workspace 3', 'layout accordion']
+
+# Browser apps go to workspace B.
+[[on-window-detected]]
+if.app-id = 'net.imput.helium'
+run = "move-node-to-workspace B"
+
+# Move Brave windows to the browser workspace.
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = "move-node-to-workspace B"
+
+# Move Safari windows to the browser workspace.
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
 run = "move-node-to-workspace B"
