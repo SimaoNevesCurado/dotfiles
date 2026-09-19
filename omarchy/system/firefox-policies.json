@@ -1,0 +1,21 @@
+{
+  "policies": {
+    "IPProtectionAvailable": false,
+    "ExtensionSettings": {
+      "pywalfox@frewacom.org": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/pywalfox/latest.xpi"
+      }
+    },
+    "Preferences": {
+      "identity.fxaccounts.toolbar.enabled": {
+        "Value": false,
+        "Status": "locked"
+      },
+      "extensions.unifiedExtensions.button.always_visible": {
+        "Value": false,
+        "Status": "locked"
+      }
+    }
+  }
+}
