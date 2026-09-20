@@ -22,6 +22,7 @@ To restore only configuration, run `./install.sh`. Changed files are backed up u
 - Codex CLI as the default coding agent. Existing Codex settings and authentication are preserved.
 - GitHub Desktop and CLI, plus a separate `setup-github.sh` for browser login and SSH registration.
 - ARM64 PhpStorm and GeistMono Nerd Font.
+- Signal Desktop from the Arch Linux ARM repository.
 
 Sublime Text, Claude, Herdr and Hod are not installed by these scripts. No credentials or SSH keys are stored in this directory.
 

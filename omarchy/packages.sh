@@ -14,6 +14,10 @@ if ! pacman -Q firefox >/dev/null 2>&1; then
 fi
 "${aur[@]}" -S --needed --noconfirm python-pywalfox github-desktop-bin
 
+if ! pacman -Q signal-desktop >/dev/null 2>&1; then
+  "${elevate[@]}" pacman -S --needed --noconfirm signal-desktop
+fi
+
 for app in gh codex; do
   if ! command -v "$app" >/dev/null 2>&1; then
     omarchy mise install "$app"
