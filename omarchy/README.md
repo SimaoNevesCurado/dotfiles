@@ -28,7 +28,76 @@ Sublime Text, Claude, Herdr and Hod are not installed by these scripts. No crede
 
 ## Shortcuts
 
-The bindings from Nuno are in `config/hypr/bindings.lua`. These replace several Omarchy window-management shortcuts: Super+F becomes Find, Super+T becomes New tab, Super+W becomes Close tab, Super+L becomes Address bar, Super+S becomes Save, and Super+arrows navigate text. Super+Q closes the window. Super+C/V/X remain provided by Omarchy's default clipboard bindings.
+Custom bindings are defined in [`config/hypr/bindings.lua`](config/hypr/bindings.lua) and loaded after Omarchy defaults. `Super` is the Windows key, or Command on a Mac keyboard. These bindings replace any Omarchy actions on the same keys.
+
+### Application shortcuts
+
+For the letter shortcuts below, applications receive `Ctrl + letter`. Windows tagged as terminals receive `Ctrl + Shift + letter`. The action depends on what the active application supports; the labels describe the intended application behavior.
+
+| Shortcut | Intended action |
+| --- | --- |
+| `Super + B` | Bold |
+| `Super + D` | Bookmark |
+| `Super + F` | Find |
+| `Super + G` | Find next |
+| `Super + I` | Italic |
+| `Super + J` | Downloads |
+| `Super + K` | Insert link |
+| `Super + L` | Focus address bar |
+| `Super + N` | New window |
+| `Super + O` | Open |
+| `Super + P` | Print |
+| `Super + R` | Reload |
+| `Super + S` | Save |
+| `Super + T` | New tab |
+| `Super + U` | Underline |
+| `Super + W` | Close tab |
+| `Super + Z` | Undo |
+
+### Window, tabs and zoom
+
+These shortcuts behave the same in applications and terminals, subject to application support. `Super + Q` closes the active window directly through Hyprland.
+
+| Shortcut | Action | Keys sent to application |
+| --- | --- | --- |
+| `Super + Q` | Close active window | Hyprland close action |
+| `Super + A` | Select all | `Ctrl + A` |
+| `Super + Shift + Z` | Redo | `Ctrl + Shift + Z` |
+| `Super + Shift + T` | Reopen closed tab | `Ctrl + Shift + T` |
+| `Super + 0` | Reset zoom | `Ctrl + 0` |
+| `Super + -` | Zoom out | `Ctrl + -` |
+| `Super + =` | Zoom in | `Ctrl + =` |
+| `Super + [` | Go back | `Alt + Left` |
+| `Super + ]` | Go forward | `Alt + Right` |
+| `Super + Shift + [` | Previous tab | `Ctrl + Shift + Tab` |
+| `Super + Shift + ]` | Next tab | `Ctrl + Tab` |
+
+Reset zoom uses physical key `code:19` (the `0` position). The bracket, minus and equal bindings use named key symbols, so their availability depends on the keyboard layout.
+
+### Text navigation and selection
+
+| Shortcut | Action | Keys sent to application |
+| --- | --- | --- |
+| `Super + Left / Right` | Start / end of line | `Home / End` |
+| `Super + Up / Down` | Start / end of document | `Ctrl + Home / End` |
+| `Super + Shift + Left / Right` | Select to start / end of line | `Shift + Home / End` |
+| `Super + Shift + Up / Down` | Select to start / end of document | `Ctrl + Shift + Home / End` |
+| `Alt + Left / Right` | Previous / next word | `Ctrl + Left / Right` |
+| `Alt + Shift + Left / Right` | Select previous / next word | `Ctrl + Shift + Left / Right` |
+
+### Text deletion
+
+| Shortcut | Intended action | Application receives | Terminal receives |
+| --- | --- | --- | --- |
+| `Super + Backspace` | Delete to start of line | `Shift + Home`, then `Backspace` | `Ctrl + U` |
+| `Alt + Backspace` | Delete previous word | `Ctrl + Backspace` | `Ctrl + W` |
+| `Alt + Delete` | Delete next word | `Ctrl + Delete` | `Alt + D` |
+
+Terminal behavior depends on the shell or program running inside it. For example, `Super + A` sends `Ctrl + A`, which commonly moves to the start of the command line instead of selecting all.
+
+### Inherited Omarchy shortcuts
+
+`Super + C / V / X` use Omarchy's default clipboard bindings; this file does not redefine them.
 
 The normal Omarchy editor shortcut, Super+Shift+N, opens Zed. The agent shortcut, Super+Ctrl+Shift+A, uses Codex. The Zed theme is defined in `config/omarchy/themed/zed.json.tpl`, using the [Zed theme schema](https://zed.dev/schema/themes/v0.2.0.json). Codex installation and login are documented in the [official documentation](https://developers.openai.com/codex/cli).
 

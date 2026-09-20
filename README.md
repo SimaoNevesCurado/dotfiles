@@ -19,3 +19,7 @@ cd dotfiles/omarchy
 ```
 
 Read the [Omarchy instructions](omarchy/README.md) before restoring on another machine. Changed configuration files are backed up. GitHub authentication runs through your browser; credentials and SSH keys are not included in the repository.
+
+## Custom keyboard shortcuts
+
+See the [Omarchy shortcut reference](omarchy/README.md#shortcuts) for the Mac-style application shortcuts, window and tab controls, zoom, text navigation, selection, and deletion. The reference also explains terminal behavior and which shortcuts come from Omarchy defaults.
