@@ -23,8 +23,11 @@ To restore only configuration, run `./install.sh`. Changed files are backed up u
 - GitHub Desktop and CLI, plus a separate `setup-github.sh` for browser login and SSH registration.
 - ARM64 PhpStorm and GeistMono Nerd Font.
 - Signal Desktop from the Arch Linux ARM repository.
+- Yerd 2.0.4, repackaged from the official ARM64 Debian binary into a pacman-managed package with SHA-256 verification. Install independently with `./install-yerd.sh` (or `DOTFILES_GUI_AUTH=1 ./install-yerd.sh` for graphical administrator authentication). Open Yerd from the launcher to complete daemon, PHP and local domain setup. The upstream Arch package currently targets x86-64 only; `yerd/PKGBUILD` provides the ARM64 packaging. Runtime data and certificates are not stored in this repository.
 
 Sublime Text, Claude, Herdr and Hod are not installed by these scripts. No credentials or SSH keys are stored in this directory.
+
+Keep Arch fully updated (`sudo pacman -Syu`) before installing Yerd, as recommended by [upstream](https://yerd.app/guide/getting-started). The installer does not perform a full system upgrade automatically.
 
 ## Shortcuts
 

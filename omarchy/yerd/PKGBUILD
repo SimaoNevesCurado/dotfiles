@@ -1,0 +1,21 @@
+# Repackage the official ARM64 release for Arch Linux ARM.
+pkgname=yerd-bin
+pkgver=2.0.4
+pkgrel=1
+pkgdesc='Local PHP development environment'
+arch=('aarch64')
+url='https://yerd.app'
+license=('MIT')
+depends=('gtk3' 'webkit2gtk-4.1' 'libayatana-appindicator' 'libcap')
+provides=('yerd')
+conflicts=('yerd')
+options=('!strip')
+source=("https://github.com/forjedio/yerd/releases/download/v${pkgver}/Yerd_Linux_Arm64_v${pkgver//./-}.deb"
+        "https://raw.githubusercontent.com/forjedio/yerd/v${pkgver}/LICENSE.md")
+sha256sums=('b772fc584f0360efae2e23b986bd374d313f09f2ebf56f4273159c503634d941'
+            'a69b3918a72da181645a350b0928c09ca5f93ba34ba036e63d558a8e54d8646f')
+
+package() {
+  bsdtar -xf "$srcdir/data.tar.gz" -C "$pkgdir"
+  install -Dm644 "$srcdir/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
