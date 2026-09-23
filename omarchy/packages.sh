@@ -17,7 +17,13 @@ fi
 if ! pacman -Q signal-desktop >/dev/null 2>&1; then
   "${elevate[@]}" pacman -S --needed --noconfirm signal-desktop
 fi
+"$repo/install-omakade.sh"
 "$repo/install-yerd.sh"
+if command -v code >/dev/null 2>&1; then
+  "$repo/../vscode/install-extensions.sh"
+else
+  printf 'VS Code not found; install it and run ../vscode/install-extensions.sh.\n'
+fi
 
 for app in gh codex; do
   if ! command -v "$app" >/dev/null 2>&1; then

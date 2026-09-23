@@ -1,41 +1,7 @@
-![V5syyKt](https://github.com/SimaoNevesCurado/dotfiles/assets/111795948/32cf5438-3b96-4cf0-8545-6a50a2fb71a4)<h1 align="center" id="title">MINIMALISTC VSCODE</h1>
+# Minimal VS Code
 
-<p id="description">This repotory contains my configuration files that i use on a daily basis on vscode feel free to download and install them.</p>
+Catppuccin Frappé with matching file icons and Fluent UI icons. JetBrainsMono Nerd Font at 15 px, Medium (500), in the editor and terminal. Single visible tab, no minimap, breadcrumbs or activity bar. APC is no longer used.
 
-<h2>VSCode Screenshots:</h2>
+On Omarchy, `../omarchy/install.sh` restores `settings.json` with a backup. Install VS Code first, then run `./install-extensions.sh` to restore the saved extensions and remove APC. `../omarchy/packages.sh` also installs the extensions when VS Code is available. JetBrainsMono Nerd Font must be installed.
 
-<img src="https://prnt.sc/KvQOPRBQnEPu" alt="project-screenshot" width="600" height="1000/">
-
-<h2>🛠️ Installation Steps:</h2>
-
-<p>1. Inter</p>
-
-```
-https://fonts.google.com/specimen/Inter
-```
-
-<p>2. Jetbrains Mono</p>
-
-```
-https://www.jetbrains.com/pt-br/lp/mono/
-```
-
-<p>3. File</p>
-
-```
-Download the "settings.json" file a paste it on your vscode config folder
-```
-<p>4. Extensions</p>
-
-```
-Apc Customize UI++
-```
-```
-Better Comments
-```
-```
-Fluent Icons
-```
-```
-Min Theme
-```
+Omarchy automatically changes the VS Code theme when the system theme changes. The Catppuccin overlay in `../omarchy/config/omarchy/themes/catppuccin/vscode.json` selects Frappé. Keep `skip-vscode-theme-changes` disabled (`omarchy toggle skip-vscode-theme-changes off`). Restoring settings initially selects Frappé; the next Omarchy theme change selects the system's theme. File icons remain Catppuccin Frappé.

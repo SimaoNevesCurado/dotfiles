@@ -28,6 +28,10 @@ while IFS= read -r -d '' source_file; do
     relative_path="${source_file#"$dotfiles_dir/home/"}"
     destination="$HOME/$relative_path"
   fi
+  if [[ "$source_file" == "$dotfiles_dir/../vscode/settings.json" ]]; then
+    relative_path="Code/User/settings.json"
+    destination="$config_dir/$relative_path"
+  fi
   if [[ -f "$destination" ]] && cmp -s -- "$source_file" "$destination"; then
     printf 'Unchanged: %s\n' "$relative_path"
     continue
@@ -52,7 +56,7 @@ while IFS= read -r -d '' source_file; do
   mkdir -p -- "$(dirname -- "$destination")"
   # Replace a destination symlink instead of writing through it.
   cp --remove-destination -- "$source_file" "$destination"
-done < <(find "$dotfiles_dir/config" "$dotfiles_dir/home" -type f -print0)
+done < <(find "$dotfiles_dir/config" "$dotfiles_dir/home" "$dotfiles_dir/../vscode/settings.json" -type f -print0)
 
 if "$dry_run"; then
   printf 'Preview complete. No files changed.\n'

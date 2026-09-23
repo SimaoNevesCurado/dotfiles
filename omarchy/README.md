@@ -18,11 +18,13 @@ To restore only configuration, run `./install.sh`. Changed files are backed up u
 - Nuno's Mac-style Hyprland shortcuts, Starship prompt and `w` alias for `~/Work`.
 - Portuguese keyboard layout, VM scroll adjustment, and this machine's monitor and desktop settings.
 - Firefox as the default browser, Pywalfox extension and native messaging, and Firefox policy customizations.
+- Minimal VS Code settings from `../vscode/settings.json`: Catppuccin Frappé, matching file icons, and 15 px Medium JetBrainsMono Nerd Font. With VS Code already installed, `packages.sh` restores extensions and removes APC. Omarchy theme synchronization uses its built-in integration, with a Frappé override for Catppuccin. See [VS Code instructions](../vscode/README.md).
 - Zed as the default editor, with an Omarchy color theme generated on theme changes.
 - Codex CLI as the default coding agent. Existing Codex settings and authentication are preserved.
 - GitHub Desktop and CLI, plus a separate `setup-github.sh` for browser login and SSH registration.
 - ARM64 PhpStorm and GeistMono Nerd Font.
 - Signal Desktop from the Arch Linux ARM repository.
+- [Omakade](https://github.com/btsouth/omakade) 1.12.0 from the official GitHub release, with SHA-256 verification and ARM64/x86-64 support. Install with `./install-omakade.sh` (or `DOTFILES_GUI_AUTH=1 ./install-omakade.sh` for graphical administrator authentication); `packages.sh` also runs it. Launch with `omakade` or from the application launcher. Existing settings and library data remain local. The script skips an installed version that is equal or newer; update its version when adopting a newer release.
 - Yerd 2.0.4, repackaged from the official ARM64 Debian binary into a pacman-managed package with SHA-256 verification. Install independently with `./install-yerd.sh` (or `DOTFILES_GUI_AUTH=1 ./install-yerd.sh` for graphical administrator authentication). Open Yerd from the launcher to complete daemon, PHP and local domain setup. The upstream Arch package currently targets x86-64 only; `yerd/PKGBUILD` provides the ARM64 packaging. Runtime data and certificates are not stored in this repository.
 
 Sublime Text, Claude, Herdr and Hod are not installed by these scripts. No credentials or SSH keys are stored in this directory.

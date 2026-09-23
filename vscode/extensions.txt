@@ -1,0 +1,7 @@
+aaron-bond.better-comments
+bmewburn.vscode-intelephense-client
+catppuccin.catppuccin-vsc
+catppuccin.catppuccin-vsc-icons
+enkia.tokyo-night
+laravel.vscode-laravel
+miguelsolorio.fluent-icons
