@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 repo="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+if [[ ${DOTFILES_GUI_AUTH:-0} == 1 ]]; then
+  elevate=(pkexec)
+else
+  elevate=(sudo)
+fi
+"${elevate[@]}" omarchy pkg add libxcrypt-compat
 if pacman -Q yerd-bin >/dev/null 2>&1 || pacman -Q yerd >/dev/null 2>&1; then
   printf 'Yerd already installed.\n'
   exit 0
@@ -8,11 +14,6 @@ fi
 if [[ $(uname -m) != aarch64 ]]; then
   printf 'This installer targets Arch Linux ARM (aarch64).\n' >&2
   exit 1
-fi
-if [[ ${DOTFILES_GUI_AUTH:-0} == 1 ]]; then
-  elevate=(pkexec)
-else
-  elevate=(sudo)
 fi
 build_dir=$(mktemp -d)
 trap 'rm -rf -- "$build_dir"' EXIT

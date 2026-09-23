@@ -1,12 +1,12 @@
 # Repackage the official ARM64 release for Arch Linux ARM.
 pkgname=yerd-bin
 pkgver=2.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Local PHP development environment'
 arch=('aarch64')
 url='https://yerd.app'
 license=('MIT')
-depends=('gtk3' 'webkit2gtk-4.1' 'libayatana-appindicator' 'libcap')
+depends=('gtk3' 'webkit2gtk-4.1' 'libayatana-appindicator' 'libcap' 'libxcrypt-compat')
 provides=('yerd')
 conflicts=('yerd')
 options=('!strip')

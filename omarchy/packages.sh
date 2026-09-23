@@ -19,6 +19,8 @@ if ! pacman -Q signal-desktop >/dev/null 2>&1; then
 fi
 "$repo/install-omakade.sh"
 "$repo/install-yerd.sh"
+"$repo/install-laravel.sh"
+"$repo/install-bun.sh"
 if command -v code >/dev/null 2>&1; then
   "$repo/../vscode/install-extensions.sh"
 else
