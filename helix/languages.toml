@@ -38,3 +38,50 @@ language-servers = ["typescript-language-server"]
 name = "vue"
 language-servers = ["typescript-language-server"]
 formatter = { command = "prettier", args = ["--parser", "vue"] }
+
+[language-server.yaml-language-server.config.yaml]
+validate = true
+hover = true
+completion = true
+format.enable = true
+schemaStore.enable = true
+
+[[language]]
+name = "yaml"
+language-servers = ["yaml-language-server"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "bash"
+language-servers = ["bash-language-server"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "dockerfile"
+language-servers = ["docker-langserver"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "docker-compose"
+language-servers = ["docker-compose-langserver", "yaml-language-server"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+formatter = { command = "prettier", args = ["--parser", "json"] }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "toml"
+language-servers = ["taplo"]
+
+[[language]]
+name = "hcl"
+language-servers = ["terraform-ls"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "tfvars"
+language-servers = ["terraform-ls"]
+indent = { tab-width = 2, unit = "  " }
