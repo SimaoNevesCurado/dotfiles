@@ -1,70 +1,40 @@
+[language-server.intelephense]
+command = "intelephense"
+args = ["--stdio"]
+
+[language-server.laravel-lsp]
+command = "laravel-lsp"
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[[language]]
+name = "php"
+roots = ["composer.json", "artisan", ".git"]
+language-servers = ["intelephense", "laravel-lsp"]
+
 [[language]]
 name = "rust"
-comment-token = "//"
-language-servers = ["rust"]
+language-servers = ["rust-analyzer"]
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[[language-server.typescript-language-server.config.plugins]]
+name = "@vue/typescript-plugin"
+location = "/home/simaocurado/.local/share/mise/installs/node/latest/lib/node_modules/@vue/typescript-plugin"
+languages = ["vue"]
 
 [[language]]
-name = "html"
-indent = { tab-width = 2, unit = "  " }
-language-servers = ["emmet-ls"]
-formatter = { command = "emmet-ls" , args = ["--stdin"] }
-
-[[language]]
-name = "css"
-indent = { tab-width = 2, unit = "  " }
-language-servers = ["css-languageserver"]
-formatter = { command = "css-languageserver" , args = ["--stdin"] }
-
-[[language]]
-name = "json"
-indent = { tab-width = 2, unit = "  " }
-language-servers = ["json-languageserver"]
-formatter = { command = "json-languageserver" , args = ["--stdin"] }
- 
-[[language]]
-name = "go"
-scope = "source.go"
-injection-regex = "go"
-file-types = ["go"]
-roots = ["Gopkg.toml", "go.mod"]
-auto-format = true
-comment-token = "//"
-language-servers = ["gopls"]
-indent = { tab-width = 4, unit = "\t" }
-
-[[language]]
-name = "astro"
-language-servers = ["astro-ls"]
-formatter = { command = "astro-ls", args = ["--stdin"]}
+name = "javascript"
+language-servers = ["typescript-language-server"]
 
 [[language]]
 name = "typescript"
-language-servers = ["deno"]
+language-servers = ["typescript-language-server"]
 
-[language-server.rust]
-command = "rust-analyzer"
-args = [""]
-
-[language-server.emmet-ls]
-command = "emmet-ls"
-args = ["--stdio"]
-
-[language-server."css-languageserver"]
-command = "css-languageserver"
-args = ["--stdio"]
-
-[language-server."json-languageserver"]
-command = "json-languageserver"
-args = ["--stdio"]
-
-[language-server.gopls]
-command = "gopls"
-args = [""]
-
-[language-server."astro-ls"]
-command = "astro-ls"
-args = ["--stdio"]
-
-[language-server.deno]
-command = "deno"
-args = ["lsp"]
+[[language]]
+name = "vue"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--parser", "vue"] }
